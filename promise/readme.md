@@ -1,12 +1,12 @@
 ## Promise 状态：pending、fulfilled、rejected  
 
-pending: 待定，Promise的初始状态。可以settled 为fulfilled或rejected状态  
+1. pending: 待定，Promise的初始状态。可以settled 为fulfilled或rejected状态  
 
-fulfilled: 解决，表示执行成功。Promise被resolve后的状态，状态不可改变，私有value  
+2. fulfilled: 解决，表示执行成功。Promise被resolve后的状态，状态不可改变，私有value  
 
-rejected: 拒绝，表示执行失败。Promise被reject后的状态，状态不可改变，私有reason.  
+3. rejected: 拒绝，表示执行失败。Promise被reject后的状态，状态不可改变，私有reason.  
 
-value和reason不可变，他们包含原始值或对象的不可修改的引用，默认值为undefined.  
+# value和reason不可变，他们包含原始值或对象的不可修改的引用，默认值为undefined.  
 
 
 ## then 方法
@@ -21,5 +21,9 @@ promise.then(onFulfilled,onRejected)
   5. 调用onRejected时，会将当前Promise的reason作为参数传入  
   6. then函数的返回值为Promise对象  
   7. then可以被同一个Promise多次调用  
+
+
+## Promise 解决过程
+
 
 
