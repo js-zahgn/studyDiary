@@ -40,17 +40,22 @@ Promise 的解决过程是一个抽象操作，接收一个Promise和一个值X�
 
 ### 手写Promise  
 
-1. 定义状态  
-var PENDING = 'pending';  
-var FULFILLED = 'fulfilled';  
-var REJECTED = 'rejected';  
+1· 定义状态  
 
-2. Promise 构造函数  
+```javascript
+    var PENDING = 'pending';  
+    var FULFILLED = 'fulfilled';  
+    var REJECTED = 'rejected';  
+```
+
+2· 定义状态  
+
 创建 Promise 时传入 execute 回调函数，接收两个参数，分别用来兑现和拒绝当前Promise.  
 定义 resolve() 和 reject() 函数.  
 初始状态 PENDING ,在执行时可能会有返回值 value, 在拒绝时会有拒绝原因 reason.  
 同时需要注意， Promise 内部的异常不能直接抛出, 需要进行异常捕获.  
 
+```javascript
 function Promise(execute) {  
     var _this = this;  
     _this.state = PENDING;  
@@ -72,3 +77,4 @@ function Promise(execute) {
         reject(e);  
     }  
 }  
+```
